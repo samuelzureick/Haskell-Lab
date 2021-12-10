@@ -16,4 +16,10 @@ clockwise w x y z = CompSquare w x y z
 anticlockwise :: Square->Square->Square->Square -> Square
 anticlockwise w x y z = CompSquare w z y x
 
--- ndiff :: Square -> Square
+ndiff :: Square -> Square
+ndiff n
+ | n == allWhite 1 = BlackSquare False
+ | n == allBlack 1 = BlackSquare False
+ | n == allWhite 2 = allWhite 2
+ | n == allBlack 2 = allWhite 2
+ | otherwise = allBlack 2
